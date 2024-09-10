@@ -8,6 +8,14 @@
   font-family: "Outfit", sans-serif;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 li .active ~ hr {
   display: block;
+}
+
+.hide-scroll {
+  overflow: hidden;
 }
