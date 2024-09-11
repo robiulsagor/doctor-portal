@@ -6,10 +6,12 @@ const Navbar = () => {
   const token = true;
   const [openMenu, setOpenMenu] = useState(false);
 
+  // to close the menu
   const closeMenu = () => {
     setOpenMenu(false);
   };
 
+  // to disable scrolling effect while menu is on
   useEffect(() => {
     openMenu
       ? document.body.classList.add("hide-scroll")
@@ -18,8 +20,10 @@ const Navbar = () => {
 
   return (
     <div className="flex items-center justify-between  border-b h-[70px]">
+      {/* site logo */}
       <img src={assets.logo} className="w-32 md:w-40" alt="" />
 
+      {/* nav links */}
       <ul className="hidden lg:flex gap-4 uppercase font-medium text-base text-gray-600">
         <li>
           <NavLink to="/" className="hover:text-gray-900">
@@ -47,6 +51,7 @@ const Navbar = () => {
         </li>
       </ul>
 
+      {/* to show user icon or account create button depending on user login state */}
       {token ? (
         <div className="relative group transition duration-500">
           <div
@@ -60,7 +65,6 @@ const Navbar = () => {
             />
             <img
               src={assets.dropdown_icon}
-              // className="w-3 transition group-hover:rotate-180"
               className={`w-3 transition duration-300 ${
                 openMenu && "rotate-180"
               }`}
@@ -68,26 +72,25 @@ const Navbar = () => {
             />
           </div>
 
-          {/* <div className=" w-0 overflow-hidden transition-all duration-300 group-hover:block group-hover:border group-hover:w-[150px] group-hover:p-4  rounded-lg  absolute right-0 top-full bg-white"> */}
           {openMenu && (
-            <div className="border w-[150px] p-4  rounded-lg  absolute right-0 top-full bg-white z-20">
+            <div className="border w-[220px] p-4  rounded-lg  absolute right-0 top-full bg-white z-20">
               <ul className="flex flex-col gap-2 transition">
                 <li className="">
                   <Link
                     onClick={closeMenu}
-                    to="/"
+                    to="/my-profile"
                     className="p-2 bg-blue-50 rounded-sm block  hover:bg-blue-200  transition duration-300"
                   >
-                    Home
+                    My Profile
                   </Link>
                 </li>
                 <li className="">
                   <Link
                     onClick={closeMenu}
-                    to="/"
+                    to="/my-appointment"
                     className="p-2 bg-blue-50 rounded-sm block hover:bg-blue-200  transition duration-300"
                   >
-                    Profile
+                    My Appointment
                   </Link>
                 </li>
                 <li className="">
@@ -109,6 +112,7 @@ const Navbar = () => {
         </button>
       )}
 
+      {/* black container for menu */}
       {openMenu && (
         <div
           className="absolute top-0 left-0 w-[100vw] h-[100vh] bg-black z-10 opacity-40"
