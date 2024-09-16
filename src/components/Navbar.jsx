@@ -19,9 +19,11 @@ const Navbar = () => {
   }, [openMenu]);
 
   return (
-    <div className="flex items-center justify-between  border-b h-[70px]">
+    <div className="flex items-center justify-between  border-b h-[70px] mb-5">
       {/* site logo */}
-      <img src={assets.logo} className="w-32 md:w-40" alt="" />
+      <Link to={"/"}>
+        <img src={assets.logo} className="w-32 md:w-40" alt="" />
+      </Link>
 
       {/* nav links */}
       <ul className="hidden lg:flex gap-4 uppercase font-medium text-base text-gray-600">
@@ -29,25 +31,25 @@ const Navbar = () => {
           <NavLink to="/" className="hover:text-gray-900">
             Home
           </NavLink>
-          <hr className="w-1/2 bg-primary border-none h-0.5 mx-auto opacity-70 rounded-full hidden" />
+          <hr className="w-1/2 bg-primary border-none h-0.5 mx-auto opacity-70 rounded-full hidden mt-0.5" />
         </li>
         <li>
           <NavLink to="/doctors" className="hover:text-gray-900">
             all doctors
           </NavLink>
-          <hr className="w-1/2 bg-primary border-none h-0.5 mx-auto opacity-70 rounded-full hidden" />
+          <hr className="w-1/2 bg-primary border-none h-0.5 mx-auto opacity-70 rounded-full hidden mt-0.5" />
         </li>
         <li>
           <NavLink to="/about" className="hover:text-gray-900">
             about
           </NavLink>
-          <hr className="w-1/2 bg-primary border-none h-0.5 mx-auto opacity-70 rounded-full hidden" />
+          <hr className="w-1/2 bg-primary border-none h-0.5 mx-auto opacity-70 rounded-full hidden mt-0.5" />
         </li>
         <li>
           <NavLink to="/contact" className="hover:text-gray-900">
             contact
           </NavLink>
-          <hr className="w-1/2 bg-primary border-none h-0.5 mx-auto opacity-70 rounded-full hidden" />
+          <hr className="w-1/2 bg-primary border-none h-0.5 mx-auto opacity-70 rounded-full hidden mt-0.5" />
         </li>
       </ul>
 
